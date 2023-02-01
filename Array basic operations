@@ -1,0 +1,81 @@
+#include<stdio.h>
+
+void Traversal(int arr[] , int n);
+void FindMin(int arr[], int n);
+void FindMax(int arr[],int n);
+void FindSum(int arr[],int n);
+
+void main()
+{
+  int n;
+  printf("Enter the size of array:");
+  scanf("%d",&n);
+   int arr[n];
+   Traversal(arr,n);
+   FindMin(arr,n);
+   FindMax(arr,n);
+   FindSum(arr,n);
+}
+
+void Traversal(int arr[],int n){
+    printf("Enter the elements in array: ");
+    
+    for(int i = 0;i<n;i++){
+     scanf("%d",&arr[i]);
+    }
+
+    printf("Elemets in array: ");
+    for(int i = 0;i<n;i++){
+     printf("%d\n ",arr[i]);
+    
+  }
+}
+void FindMin(int arr[],int n)
+{
+    printf("Minimum element of given array is: ");
+     int low=0; int high=n-1;
+      while(low!=high)
+      {
+       
+    
+        if(arr[low]<arr[high])
+        {
+            high--;
+        }
+        else
+        {
+            low++;
+        }
+    }
+    printf("%d",arr[low]);
+      }
+ void FindMax(int arr[],int n)
+ {
+    printf("Maximum element of given array is: ");
+     int low=0; int high=n-1;
+      while(low!=high)
+      {
+       
+    
+        if(arr[low]>arr[high])
+        {
+            high--;
+        }
+        else
+        {
+            low++;
+        }
+    }
+    printf("%d",arr[high]);
+ }
+ void FindSum(int arr[],int n)
+ {
+     
+     int sum=0;
+     for(int i=0;i<n;i++)
+     {
+       sum +=arr[i];
+     }
+     printf("Sum of the array is: %d",sum);
+ }
+     
